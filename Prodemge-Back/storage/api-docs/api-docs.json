@@ -1,0 +1,495 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "API Documentation",
+        "description": "Documentação da API",
+        "version": "1.0.0"
+    },
+    "paths": {
+        "/api/pessoas/{id}/enderecos": {
+            "post": {
+                "tags": [
+                    "Endereço"
+                ],
+                "summary": "Adicionar endereço para uma pessoa",
+                "operationId": "eb5f4dcac107f512ee300069e43296f0",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "ID da pessoa",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "properties": {
+                                    "tipo_endereco": {
+                                        "type": "string"
+                                    },
+                                    "cep": {
+                                        "type": "string"
+                                    },
+                                    "logradouro": {
+                                        "type": "string"
+                                    },
+                                    "numero": {
+                                        "type": "string"
+                                    },
+                                    "complemento": {
+                                        "type": "string"
+                                    },
+                                    "bairro": {
+                                        "type": "string"
+                                    },
+                                    "estado": {
+                                        "type": "string"
+                                    },
+                                    "cidade": {
+                                        "type": "string"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "201": {
+                        "description": "Endereço adicionado com sucesso.",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "id": {
+                                            "type": "integer"
+                                        },
+                                        "tipo_endereco": {
+                                            "type": "string"
+                                        },
+                                        "cep": {
+                                            "type": "string"
+                                        },
+                                        "logradouro": {
+                                            "type": "string"
+                                        },
+                                        "numero": {
+                                            "type": "string"
+                                        },
+                                        "complemento": {
+                                            "type": "string"
+                                        },
+                                        "bairro": {
+                                            "type": "string"
+                                        },
+                                        "estado": {
+                                            "type": "string"
+                                        },
+                                        "cidade": {
+                                            "type": "string"
+                                        },
+                                        "pessoa_id": {
+                                            "type": "integer"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/api/endereco/{id}": {
+            "get": {
+                "tags": [
+                    "Endereço"
+                ],
+                "summary": "Obter endereço por ID",
+                "operationId": "89633b570adedbd1118e73e6f7d39ab0",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Detalhes do endereço."
+                    }
+                }
+            },
+            "put": {
+                "tags": [
+                    "Endereço"
+                ],
+                "summary": "Atualização de endereço",
+                "operationId": "653e5e4cbf412939bedc12842fc3d9ab",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "properties": {
+                                    "tipo_endereco": {
+                                        "type": "string"
+                                    },
+                                    "cep": {
+                                        "type": "string"
+                                    },
+                                    "logradouro": {
+                                        "type": "string"
+                                    },
+                                    "numero": {
+                                        "type": "string"
+                                    },
+                                    "complemento": {
+                                        "type": "string"
+                                    },
+                                    "bairro": {
+                                        "type": "string"
+                                    },
+                                    "estado": {
+                                        "type": "string"
+                                    },
+                                    "cidade": {
+                                        "type": "string"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Endereço atualizado com sucesso.",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "id": {
+                                            "type": "integer"
+                                        },
+                                        "pessoa_id": {
+                                            "type": "integer"
+                                        },
+                                        "tipo_endereco": {
+                                            "type": "string"
+                                        },
+                                        "cep": {
+                                            "type": "string"
+                                        },
+                                        "logradouro": {
+                                            "type": "string"
+                                        },
+                                        "numero": {
+                                            "type": "string"
+                                        },
+                                        "complemento": {
+                                            "type": "string"
+                                        },
+                                        "bairro": {
+                                            "type": "string"
+                                        },
+                                        "estado": {
+                                            "type": "string"
+                                        },
+                                        "cidade": {
+                                            "type": "string"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Endereço não encontrado."
+                    }
+                }
+            },
+            "delete": {
+                "tags": [
+                    "Endereço"
+                ],
+                "summary": "Excluir endereço pelo ID",
+                "operationId": "1d275dc5049d72f51e8f54b4cd4fe33e",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "204": {
+                        "description": "Endereço deletado."
+                    }
+                }
+            }
+        },
+        "/api/pessoas": {
+            "get": {
+                "tags": [
+                    "Pessoas"
+                ],
+                "summary": "Lista de pessoas",
+                "operationId": "7c7d2c9decc48109bcd470035e629ecb",
+                "responses": {
+                    "200": {
+                        "description": "Toda a Lista de Pessoas."
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "Pessoas"
+                ],
+                "summary": "Criação de pessoa",
+                "operationId": "b72258a0649966eb7cb39a9fdc67bf4b",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "properties": {
+                                    "nome": {
+                                        "type": "string"
+                                    },
+                                    "nome_social": {
+                                        "type": "string"
+                                    },
+                                    "cpf": {
+                                        "type": "string"
+                                    },
+                                    "nome_pai": {
+                                        "type": "string"
+                                    },
+                                    "nome_mae": {
+                                        "type": "string"
+                                    },
+                                    "telefone": {
+                                        "type": "string"
+                                    },
+                                    "email": {
+                                        "type": "string"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "201": {
+                        "description": "Pessoa criada com sucesso.",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "id": {
+                                            "type": "integer"
+                                        },
+                                        "nome": {
+                                            "type": "string"
+                                        },
+                                        "nome_social": {
+                                            "type": "string"
+                                        },
+                                        "cpf": {
+                                            "type": "string"
+                                        },
+                                        "nome_pai": {
+                                            "type": "string"
+                                        },
+                                        "nome_mae": {
+                                            "type": "string"
+                                        },
+                                        "telefone": {
+                                            "type": "string"
+                                        },
+                                        "email": {
+                                            "type": "string"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/api/pessoas/{id}": {
+            "get": {
+                "tags": [
+                    "Pessoas"
+                ],
+                "summary": "GET pessoas por ID",
+                "operationId": "9767860b5875b66fc3535a00d47aec2d",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "Id de pessoas",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Dados de pessoas."
+                    }
+                }
+            },
+            "put": {
+                "tags": [
+                    "Pessoas"
+                ],
+                "summary": "Atualização de pessoa",
+                "operationId": "da7d1255c980a411d322994cbca98632",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "ID da pessoa a ser atualizada",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "properties": {
+                                    "nome": {
+                                        "type": "string"
+                                    },
+                                    "nome_social": {
+                                        "type": "string"
+                                    },
+                                    "cpf": {
+                                        "type": "string"
+                                    },
+                                    "nome_pai": {
+                                        "type": "string"
+                                    },
+                                    "nome_mae": {
+                                        "type": "string"
+                                    },
+                                    "telefone": {
+                                        "type": "string"
+                                    },
+                                    "email": {
+                                        "type": "string"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Pessoa atualizada com sucesso.",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "id": {
+                                            "type": "integer"
+                                        },
+                                        "nome": {
+                                            "type": "string"
+                                        },
+                                        "nome_social": {
+                                            "type": "string"
+                                        },
+                                        "cpf": {
+                                            "type": "string"
+                                        },
+                                        "nome_pai": {
+                                            "type": "string"
+                                        },
+                                        "nome_mae": {
+                                            "type": "string"
+                                        },
+                                        "telefone": {
+                                            "type": "string"
+                                        },
+                                        "email": {
+                                            "type": "string"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "delete": {
+                "tags": [
+                    "Pessoas"
+                ],
+                "summary": "Excluir pessoas pelo ID",
+                "operationId": "6ac497549c4c86a2d7bbd144d43dffb3",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "ID de pessoas",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "204": {
+                        "description": "Pessoa Deletada."
+                    }
+                }
+            }
+        }
+    },
+    "tags": [
+        {
+            "name": "Endereço",
+            "description": "Endereço"
+        },
+        {
+            "name": "Pessoas",
+            "description": "Pessoas"
+        }
+    ]
+}
